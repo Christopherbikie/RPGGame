@@ -4,8 +4,6 @@ import static org.lwjgl.opengl.GL11.glPopMatrix;
 import static org.lwjgl.opengl.GL11.glPushMatrix;
 import static org.lwjgl.opengl.GL11.glTranslatef;
 
-import game.Game;
-
 public abstract class Entity {
 	protected float x, y;
 	protected int type;
