@@ -31,10 +31,13 @@ public class Game {
 		
 		
 		for (Entity e : entitys)
-			if (e.getRemove())
+			if (!e.getRemove())
 				e.update();
 			else 
 				remove.add(e);
+		
+		for (Entity e : remove)
+			entitys.remove(e);
 	}
 	
 	public void render() {

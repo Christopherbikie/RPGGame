@@ -9,7 +9,7 @@ public abstract class Entity {
 	protected int type;
 	protected Sprite sprite;
 
-	protected boolean remove = false;
+	protected boolean[] flags = new boolean[1];
 	
 	public void update() {
 		
@@ -34,7 +34,11 @@ public abstract class Entity {
 	}
 	
 	public boolean getRemove() {
-		return remove;
+		return flags[0];
+	}
+	
+	public void remove() {
+		flags[0] = true;
 	}
 
 	public float getX() {

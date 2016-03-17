@@ -11,6 +11,7 @@ public class Player extends Entity{
 	
 	private int health;
 	private float xp;
+	private Stats stats;
 	
 	public Player(float x, float y) {
 		init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, 0);
