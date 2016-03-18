@@ -28,8 +28,6 @@ public class Game {
 	}
 	
 	public void update() {
-		
-		
 		for (Entity e : entitys)
 			if (!e.getRemove())
 				e.update();
