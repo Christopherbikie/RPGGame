@@ -7,15 +7,12 @@ import game.entity.item.Item;
 
 public class Player extends Entity{
 	public static final float SIZE = 32;
-	public static final double LEVEL_CONST = 25 * Math.pow(3, 3.0 / 2.0);
 	
 	private int health;
-	private float xp;
 	private Stats stats;
 	
 	public Player(float x, float y) {
 		init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, 0);
-		this.xp = 0;
 		this.health = 10;
 	}
 	
