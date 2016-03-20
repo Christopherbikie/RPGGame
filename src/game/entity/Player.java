@@ -8,12 +8,11 @@ import game.entity.item.Item;
 public class Player extends Entity{
 	public static final float SIZE = 32;
 	
-	private int health;
 	private Stats stats;
 	
 	public Player(float x, float y) {
 		init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, 0);
-		this.health = 10;
+		stats = new Stats(0);
 	}
 	
 	@Override
@@ -38,41 +37,31 @@ public class Player extends Entity{
 	}
 	
 	public float getSpeed() {
-		return 4f;
+		return stats.getSpeed();
 	}
 	
 	private int getLevel() {
-		double x = xp + 105;
-		
-		double a = Math.sqrt(243 * x * x + 4050 * x + 17500);
-		double c = (3 * x + 25) / 25;
-		double d = Math.cbrt(a / LEVEL_CONST + c);
-		
-		return (int) (d - 1.0 / d * 3) - 1;
+		return stats.getLevel();
 	}
 	
 	public int getMaxHealth() {
-		return getLevel() * 10;
+		return stats.getMaxHealth();
 	}
 	
 	public int getCurrentHealth() {
-		int max = getMaxHealth();
-		if (health > max)
-			health = max;
-		
-		return health;
+		return stats.getCurrentHealth();
 	}
 	
 	public float getStrength() {
-		return getLevel() * 4;
+		return stats.getStrength();
 	}
 	
 	public float getMagic() {
-		return getLevel() * 4f;
+		return stats.getMagic();
 	}
 	
 	public void addXP(float amount) {
-		xp += amount;
+		stats.addXP(amount);
 	}
 	
 	public void addItem(Item item) {
