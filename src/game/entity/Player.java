@@ -9,10 +9,12 @@ public class Player extends Entity{
 	public static final float SIZE = 32;
 	
 	private Stats stats;
+	private Inventory inventory;
 	
 	public Player(float x, float y) {
 		init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, 0);
-		stats = new Stats(0);
+		this.stats = new Stats(0);
+		this.inventory = new Inventory(20);
 	}
 	
 	@Override
@@ -65,6 +67,6 @@ public class Player extends Entity{
 	}
 	
 	public void addItem(Item item) {
-		System.out.println("We just picked up an item");
+		inventory.add(item);
 	}
 }

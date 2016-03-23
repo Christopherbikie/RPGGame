@@ -31,4 +31,8 @@ public class Item extends Entity {
 		if (Physics.checkCollisions(this, player))
 			pickUp();
 	}
+	
+	public String getName() {
+		return name;
+	}
 }
